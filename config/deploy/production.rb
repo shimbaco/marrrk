@@ -1,1 +1,1 @@
-server "marrrk", user: "marrrk", roles: %w(app db)
+server "marrrk", user: "annict", roles: %w(app db)
