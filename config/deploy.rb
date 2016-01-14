@@ -1,7 +1,7 @@
 lock "3.4.0"
 
 set :application, "marrrk"
-set :repo_url, "git@github.com:marrrk/marrrk.git"
+set :repo_url, "git@github.com:shimbaco/marrrk.git"
 
 set :deploy_to, "/home/marrrk"
 
