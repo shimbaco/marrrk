@@ -30,7 +30,11 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller" # better_errorsで使用
   gem "bullet"
+  gem "capistrano"
+  gem "capistrano-bundler"
+  gem "capistrano3-puma"
   gem "capistrano-rails"
+  gem "capistrano-rbenv"
   gem "quiet_assets"
   gem "spring"
   gem "thin"
