@@ -28,6 +28,7 @@ set :linked_dirs, linked_dirs
 
 linked_files = %w(
   config/database.yml
+  config/secrets.yml
 )
 set :linked_files, linked_files
 
