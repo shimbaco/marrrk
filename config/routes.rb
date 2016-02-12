@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:index]
   end
 
+  get "ua", to: "home#ua"
+
   root "home#index"
 end
