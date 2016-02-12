@@ -4,11 +4,11 @@ sub vcl_recv {
     unset req.http.Cookie;
   }
   log {"syslog 347IlFpfELIWozqoRqO1Ue Marrrk :: req.http.User-Agent: "} req.http.User-Agent;
-  # if (req.http.User-Agent ~ "Mobile") {
-  #   set req.http.X-Device = "Mobile";
-  # } else {
-  #   set req.http.X-Device = "PC";
-  # }
+  if (req.http.User-Agent ~ "Mobile") {
+    set req.http.X-Device = "Mobile";
+  } else {
+    set req.http.X-Device = "PC";
+  }
 #FASTLY recv
 }
 
