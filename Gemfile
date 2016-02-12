@@ -5,6 +5,7 @@ ruby "2.3.0"
 gem "rails", "4.2.5"
 
 gem "activerecord-session_store"
+gem "browser"
 gem "coffee-rails"
 gem "devise"
 gem "fastly-rails"

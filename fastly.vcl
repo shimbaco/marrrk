@@ -3,18 +3,16 @@ sub vcl_recv {
   if (req.url ~ "/no_cookie/") {
     unset req.http.Cookie;
   }
-  if (req.http.User-Agent) {
-    if (req.http.User-Agent ~ "Mobile") {
-      set req.http.User-Agent = "Mobile";
-    } else {
-      set req.http.User-Agent = "PC";
-    }
+  log {"syslog 347IlFpfELIWozqoRqO1Ue Marrrk :: req.http.User-Agentt: "} req.http.User-Agentt;
+  if (req.http.User-Agentt ~ "Mobile") {
+    set req.http.X-User-Agent = "Mobile";
+  } else {
+    set req.http.X-User-Agent = "PC";
   }
 #FASTLY recv
 }
 
 sub vcl_fetch {
-  log {"syslog 347IlFpfELIWozqoRqO1Ue Marrrk :: beresp.http.User-Agent: "} beresp.http.User-Agent;
 #FASTLY fetch
 }
 
