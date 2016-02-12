@@ -1,12 +1,16 @@
 sub vcl_recv {
-  if (req.http.User-Agent) {
-    if (req.http.User-Agent ~ "Mobile") {
-      set req.http.User-Agent = "Mobile";
-    } else {
-      set req.http.User-Agent = "PC";
-    }
-  }
 #FASTLY recv
+}
+
+sub vcl_deliver {
+  # if (req.http.User-Agent) {
+  #   if (req.http.User-Agent ~ "Mobile") {
+  #     set req.http.User-Agent = "Mobile";
+  #   } else {
+  #     set req.http.User-Agent = "PC";
+  #   }
+  # }
+#FASTLY deliver
 }
 
 sub vcl_miss {
