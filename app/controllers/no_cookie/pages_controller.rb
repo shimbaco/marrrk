@@ -1,6 +1,6 @@
 class NoCookie::PagesController < NoCookie::ApplicationController
   def ua
-    response.headers["Vary"] = "X-User-Agent"
-    response.headers["X-User-Agent"] = request.headers["X-User-Agent"]
+    response.headers["Vary"] = "X-Device"
+    response.headers["X-Device"] = request.headers["X-Device"]
   end
 end

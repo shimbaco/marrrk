@@ -5,9 +5,9 @@ sub vcl_recv {
   }
   log {"syslog 347IlFpfELIWozqoRqO1Ue Marrrk :: req.http.User-Agent: "} req.http.User-Agent;
   if (req.http.User-Agent ~ "Mobile") {
-    set req.http.X-User-Agent = "Mobile";
+    set req.http.X-Device = "Mobile";
   } else {
-    set req.http.X-User-Agent = "PC";
+    set req.http.X-Device = "PC";
   }
 #FASTLY recv
 }
