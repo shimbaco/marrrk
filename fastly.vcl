@@ -3,11 +3,16 @@ sub vcl_recv {
   if (req.url ~ "/no_cookie/") {
     unset req.http.Cookie;
   }
-  log {"syslog 347IlFpfELIWozqoRqO1Ue Marrrk :: req.http.User-Agent: "} req.http.User-Agent;
+
   if (req.http.User-Agent ~ "Mobile") {
     set req.http.X-Device = "Mobile";
   } else {
     set req.http.X-Device = "PC";
+  }
+
+  if (geoip.country_code) {
+    log {"syslog 347IlFpfELIWozqoRqO1Ue Marrrk :: geoip.country_code: "} geoip.country_code;
+    set req.http.X-Country-Code = geoip.country_code;
   }
 #FASTLY recv
 }

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     end
 
     resource :pages, only: [] do
+      get :geo
       get :ua
     end
   end
